@@ -42,5 +42,7 @@ const styles = StyleSheet.create({
   },
   ButtonText: {
     fontSize: 20,
+    fontFamily: 'poppins',
+    color: 'black',
   },
 });

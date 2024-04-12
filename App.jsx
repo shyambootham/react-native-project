@@ -1,13 +1,14 @@
 import React from 'react';
 import {View} from 'react-native';
-import SplashScreen from './pages/SplashScreen';
+import SplashScreen from './pages/Signin';
 import Signup from './pages/Signup';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import Footer from './pages/Footer';
-import Register from './pages/Register';
-import Validation from './pages/Validation';
+import Search from './pages/Search';
+import Results from './pages/Results';
+import Home from './pages/Home';
+import Signin from './pages/Signin';
 
 export default function App() {
   const Stack = createNativeStackNavigator(); // corrected Stack navigator creation
@@ -16,14 +17,16 @@ export default function App() {
       <NavigationContainer>
         {/* Stack navigator for managing navigation */}
         <Stack.Navigator
-          initialRouteName={'splashscreen'} // Corrected route name
+          initialRouteName={'Home'} // Corrected route name
           screenOptions={{headerShown: false}} // Hide header
         >
           {/* Define screen components */}
 
-          <Stack.Screen name="validation" component={Validation} />
-          {/* <Stack.Screen name="splashscreen" component={SplashScreen} />
-          <Stack.Screen name="signup" component={Signup} />*/}
+          <Stack.Screen name="home" component={Home} />
+          <Stack.Screen name="search" component={Search} />
+
+          {<Stack.Screen name="signin" component={Signin} />}
+          {<Stack.Screen name="signup" component={Signup} />}
         </Stack.Navigator>
       </NavigationContainer>
     </View>

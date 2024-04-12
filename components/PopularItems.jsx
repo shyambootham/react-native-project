@@ -1,9 +1,9 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 
-export default function Items({item}) {
+export default function PopularItems({item}) {
   return (
-    <View style={styles.container}>
+    <View key={item.name} style={styles.container}>
       <Image
         source={item.image}
         style={styles.image}
@@ -27,16 +27,16 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     flex: 1,
-    height: 250,
-    maxWidth: '50%',
+    height: 200,
+    maxWidth: '30%',
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
     borderRadius: 10,
   },
   image: {
     width: '100%',
-    height: '70%',
+    height: '50%',
     borderRadius: 10,
   },
   titleContainer: {

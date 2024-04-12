@@ -14,8 +14,9 @@ import fb from './pics/fb.png';
 import google from './pics/google.png';
 import {useNavigation} from '@react-navigation/native';
 import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function SplashScreen() {
+export default function Signin() {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -87,7 +88,11 @@ export default function SplashScreen() {
       // Further processing if needed
 
       // Navigate to the next screen upon successful sign-in
-      navigation.navigate('validation');
+      await AsyncStorage.multiSet([['access_token', data.data.tokens.access]]);
+
+      const token = await AsyncStorage.multiGet(['access_token']);
+      console.log(token[0][1]);
+      navigation.navigate('search');
       setLoading(false);
       setError(null);
     } catch (error) {

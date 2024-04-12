@@ -27,7 +27,7 @@ import Dot from '../components/Dot';
 import Row from '../components/Row';
 import Items from '../components/Items';
 import Footer from './Footer';
-export default function () {
+export default function ({navigation}) {
   const flowerList = [
     {
       id: '01',
@@ -187,7 +187,7 @@ export default function () {
                 <View style={styles.location}>
                   <Location color="blue" name="location" size={20} />
                   <View style={styles.down}>
-                    <Text>O'fallon,63368</Text>
+                    <Text style={styles.Text}>O'fallon,63368</Text>
                     <Down name="chevron-down" color="blue" size={20} />
                   </View>
                 </View>
@@ -203,6 +203,10 @@ export default function () {
                     <TextInput
                       style={styles.input}
                       placeholder="Type here..."
+                      placeholderTextColor="gray"
+                      onPressIn={() => {
+                        navigation.navigate('search');
+                      }}
                     />
                   </View>
                   <Voice name="keyboard-voice" size={30} />
@@ -260,7 +264,6 @@ export default function () {
               />
             </View>
           </View>
-          <Footer />
         </ScrollView>
       </SafeAreaView>
     </View>
@@ -279,6 +282,10 @@ const styles = StyleSheet.create({
     flex: 1,
 
     gap: 6,
+  },
+  Text: {
+    fontFamily: 'poppins',
+    color: 'black',
   },
   scrollViewContent: {
     flexGrow: 1, // This ensures that the content expands to fill the container
@@ -325,6 +332,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     flex: 1,
     height: 35,
+    fontFamily: 'poppins',
+    color: 'black',
   },
   line: {
     justifyContent: 'center',

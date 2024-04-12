@@ -16,7 +16,7 @@ export default function Slide({item}) {
   return (
     <View style={[styles.container, {width}]}>
       <View style={styles.textContainer}>
-        <Text>Todays Deal</Text>
+        <Text style={styles.text}>Todays Deal</Text>
 
         <Text style={styles.title}>50% off</Text>
         <View style={styles.ButtonContainer}>
@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
+    fontFamily: 'poppins',
     color: 'black',
   },
   button: {
@@ -74,6 +75,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     textAlign: 'center',
+    fontFamily: 'poppins',
   },
   ButtonContainer: {
     flexDirection: 'row',
@@ -96,5 +98,9 @@ const styles = StyleSheet.create({
     height: 31,
     backgroundColor: 'black',
     transform: [{rotate: '45deg'}],
+  },
+  text: {
+    fontFamily: 'poppins',
+    color: 'black',
   },
 });
