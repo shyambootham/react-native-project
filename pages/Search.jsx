@@ -107,6 +107,7 @@ export default function Search({navigation}) {
               style={styles.input}
               placeholder="search"
               onChangeText={value => handleChange(value)}
+              placeholderTextColor="gray"
             />
           </View>
           {results.length > 0 && ( // Check if results array is not empty
@@ -158,6 +159,7 @@ const styles = StyleSheet.create({
   headingStyle: {
     fontSize: 20,
     color: 'black',
+    fontFamily: 'Poppins',
   },
   searchContainer: {
     justifyContent: 'flex-start',
@@ -172,6 +174,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginLeft: 10,
     borderWidth: 1,
+    fontFamily: 'Poppins',
   },
   result: {
     flexDirection: 'row',
@@ -196,5 +199,6 @@ const styles = StyleSheet.create({
   popularText: {
     fontSize: 20,
     color: 'black',
+    fontFamily: 'Poppins',
   },
 });
